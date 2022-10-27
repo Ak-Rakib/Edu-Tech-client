@@ -3,6 +3,7 @@ import { Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { FaUser } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Header.css'
 
 
@@ -24,9 +25,9 @@ const Header = () => {
                         Edu-Tech
                     </Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/courses">Courses |</Nav.Link>
-                        <Nav.Link href="/fqa">FAQ |</Nav.Link>
-                        <Nav.Link href="/blog">Blog</Nav.Link>
+                        <Nav.Link > <Link to='/courses'>Courses</Link> </Nav.Link>
+                        <Nav.Link > <Link to='/fqa'>FAQ</Link> </Nav.Link>
+                        <Nav.Link ><Link to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
