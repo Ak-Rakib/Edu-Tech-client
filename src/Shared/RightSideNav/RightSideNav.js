@@ -13,11 +13,11 @@ const RightSideNav = () => {
     }, []);
 
     return (
-        <div>
+        <div className='bg-dark text-center mt-3 p-3'>
             {
                 data.map(category => <p
                     key={category.id}>
-                    <Link to='/courses'>{category.name}</Link>
+                    <Link className='text-light' style= { {textDecoration: 'none', fontWeight:'bold'}} to='/courses'>{category.name}</Link>
                 </p>)
             }
         </div>
