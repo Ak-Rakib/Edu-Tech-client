@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
+
 
 const CoursesCard = ({course}) => {
     return (
         <div>
-             <Card>
+             <Card style={{ width: '50rem' }}>
                 <Card.Img variant="top" src={course.img} />
                 <Card.Body>
                     <Card.Title>{course.name}</Card.Title>
@@ -14,8 +14,8 @@ const CoursesCard = ({course}) => {
                         {course.paragraph}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                <Button variant="outline-dark">Dark</Button>
+                <Card.Footer className='bg-dark'>
+                
                 </Card.Footer>
             </Card>
         </div>
