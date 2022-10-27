@@ -2,6 +2,9 @@ import React from 'react';
 import { Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import { FaUser } from 'react-icons/fa';
+import './Header.css'
+
 
 
 
@@ -21,13 +24,13 @@ const Header = () => {
                         Edu-Tech
                     </Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Courses</Nav.Link>
-                        <Nav.Link href="#features">FAQ</Nav.Link>
-                        <Nav.Link href="#pricing">Blog</Nav.Link>
+                        <Nav.Link href="/courses">Courses |</Nav.Link>
+                        <Nav.Link href="/fqa">FAQ |</Nav.Link>
+                        <Nav.Link href="/blog">Blog</Nav.Link>
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
-                            Signed in as: <a href="#login">Mark Otto</a>
+                            <FaUser></FaUser>
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>
