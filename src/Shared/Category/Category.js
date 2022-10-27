@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -15,7 +15,7 @@ const Category = () => {
                     <Card.Text>
                         {courses.paragraph}
                     </Card.Text>
-                    <Button  variant="outline-dark">Access Course</Button>
+                   <Link to='/access'> <Button  variant="outline-dark">Access Course</Button></Link>
                 </Card.Body>
             </Card>
         </div>
