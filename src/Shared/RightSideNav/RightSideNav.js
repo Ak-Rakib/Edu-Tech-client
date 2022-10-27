@@ -7,7 +7,7 @@ const RightSideNav = () => {
     const [data, setData] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/courses-categories')
+        fetch('http://localhost:5000/courses-category')
         .then(res => res.json())
         .then(data => setData(data));
     }, []);
@@ -17,7 +17,7 @@ const RightSideNav = () => {
             {
                 data.map(category => <p
                     key={category.id}>
-                    <Link className='text-light' style= { {textDecoration: 'none', fontWeight:'bold'}} to='/courses'>{category.name}</Link>
+                    <Link className='text-light' style= { {textDecoration: 'none', fontWeight:'bold'}} to={`/category/${category.id}`}>{category.name}</Link>
                 </p>)
             }
         </div>
