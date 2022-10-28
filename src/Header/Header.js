@@ -1,9 +1,11 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { Image, Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import { FaUser } from 'react-icons/fa';
+import { FaLightbulb, FaMoon, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthProvider } from '../Contexts/ContextProvider';
 import './Header.css'
@@ -14,15 +16,32 @@ import './Header.css'
 const Header = () => {
     const {user, logOut} = useContext(AuthProvider);
     // console.log(user)
-
     const logOutHandler = () => {
         logOut()
        .then(()=> {})
        .catch(error => console.log(error));
    }
 
+//  ---  --------------
+// set Dark Mood
+// --------------------
+
+const [theme, setTheme] = useState('light');
+const darkMoodHandler = ()=> {
+    if(theme === 'light'){
+        setTheme('dark')
+    } else {
+        setTheme('light');
+    }
+};
+
+useEffect(()=> {
+    document.body.className = theme;
+},[theme]);
+
+
     return (
-<div>
+<div className={`Header ${theme}`}>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
             <Navbar.Brand href="#home">
@@ -42,7 +61,6 @@ const Header = () => {
                         <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none'}} to='/fqa'>FAQ</Link> </Nav.Link>
                         <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none'}} to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
-                    {/* <Navbar.Collapse className="justify-content-end"> */}
                             <Nav>
                         { user?.uid ?
                         <>
@@ -56,6 +74,9 @@ const Header = () => {
                         </>
                         }
                     </Nav>
+                    <Nav className='darkMood'>
+                    <FaLightbulb className='text-warning' onClick={darkMoodHandler}></FaLightbulb>
+                    </Nav>
                     <Navbar.Text>
                         { 
                         user?.photoURL?
@@ -68,7 +89,6 @@ const Header = () => {
                         <FaUser></FaUser>
                         }
                   </Navbar.Text>
-            {/* </Navbar.Collapse> */}
             </Navbar.Collapse>
         </Container>
     </Navbar>
