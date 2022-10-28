@@ -6,7 +6,7 @@ const AccessCourse = () => {
     const {user} = useContext(AuthProvider);
     return (
         <div>
-            <h1>Welcome {user?.displayName}</h1>
+            <h4 className='text-center mt-3 bg-dark text-light p-5'>Welcome To Premium Course Mr.{user?.displayName}</h4>
         </div>
     );
 };
