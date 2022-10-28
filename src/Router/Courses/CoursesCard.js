@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 const CoursesCard = ({course}) => {
     return (
         <div>
-             <Card>
+             <Card className='mb-5'>
                 <Card.Img variant="top" src={course.img} />
                 <Card.Body>
                     <Card.Title>{course.name}</Card.Title>

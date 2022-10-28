@@ -25,12 +25,12 @@ export const router = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://edu-tech-server-chi.vercel.app/courses')
             },
             {
                 path: '/category/:id',
                 element: <Category></Category>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({params}) => fetch(`https://edu-tech-server-chi.vercel.app/category/${params.id}`)
             },
             {
                 path: '/fqa',

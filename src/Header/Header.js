@@ -23,7 +23,7 @@ const Header = () => {
 
     return (
 <div>
-    <Navbar bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
             <Navbar.Brand href="#home">
                 <img
@@ -33,15 +33,17 @@ const Header = () => {
                     height="30"
                     className="d-inline-block align-top"
                 />{' '}
-                Edu-Tech
-            </Navbar.Brand>
-            <Nav className="me-auto">
-                <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none', fontWeight:'bold'}} to='/courses'>Courses</Link> </Nav.Link>
-                <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none', fontWeight:'bold'}} to='/fqa'>FAQ</Link> </Nav.Link>
-                <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none', fontWeight:'bold'}} to='/blog'>Blog</Link></Nav.Link>
-            </Nav>
-            <Navbar.Collapse className="justify-content-end">
-                    <Nav>
+                        Edu-Tech
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none'}} to='/courses'>Courses</Link> </Nav.Link>
+                        <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none'}} to='/fqa'>FAQ</Link> </Nav.Link>
+                        <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none'}} to='/blog'>Blog</Link></Nav.Link>
+                    </Nav>
+                    {/* <Navbar.Collapse className="justify-content-end"> */}
+                            <Nav>
                         { user?.uid ?
                         <>
                             <Link onClick={logOutHandler} className='text-light me-3' style= { {textDecoration: 'none', fontWeight:'bold'}}>Log-Out</Link>
@@ -49,8 +51,8 @@ const Header = () => {
                             </>
                         :
                         <>
-                            <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none', fontWeight:'bold'}} to='/login'>Log-In</Link></Nav.Link>
-                            <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none', fontWeight:'bold'}} to='/register'>Register</Link></Nav.Link>
+                            <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none'}} to='/login'>Log-In</Link></Nav.Link>
+                            <Nav.Link > <Link className='text-light' style= { {textDecoration: 'none'}} to='/register'>Register</Link></Nav.Link>
                         </>
                         }
                     </Nav>
@@ -66,6 +68,7 @@ const Header = () => {
                         <FaUser></FaUser>
                         }
                   </Navbar.Text>
+            {/* </Navbar.Collapse> */}
             </Navbar.Collapse>
         </Container>
     </Navbar>
