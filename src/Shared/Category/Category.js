@@ -9,48 +9,35 @@ const Category = () => {
     useTitle('Category');
     // console.log(courses.name)
     return (
-        <div className='mt-3'>
-            {/* <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={courses.img} />
-                <Card.Body className=''>
-                    <Card.Title>{courses.name}</Card.Title>
-                    <Card.Text>
-                        {courses.paragraph}
-                    </Card.Text>
-                    <Link to='/access'> <Button variant="outline-dark">Access Course</Button></Link>
-                </Card.Body>
-            </Card> */}
-
-            <>
-                {[
-                    // 'Primary',
-                    // 'Secondary',
-                    // 'Success',
-                    // 'Danger',
-                    // 'Warning',
-                    // 'Info',
-                    // 'Light',
-                    'Dark',
-                ].map((variant) => (
-                    <Card
-                        bg={variant.toLowerCase()}
-                        key={variant}
-                        text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-                        style={{ width: '18rem' }}
-                        className="mb-2"
-                    >
-                        <Card.Img style={{ width: '288px', height: '160px' }} variant="top" src={courses.img} />
-                        <Card.Body>
-                            <Card.Title>{variant} {courses.name}</Card.Title>
-                            <Card.Text>
-                                {courses.paragraph}
-                            </Card.Text>
-                            <Link to='/access'> <Button variant="outline-dark">Access Course</Button></Link>
-                        </Card.Body>
-                    </Card>
-                ))}
-            </>
-        </div>
+        <>
+            {[
+                // 'Primary',
+                // 'Secondary',
+                // 'Success',
+                // 'Danger',
+                // 'Warning',
+                // 'Info',
+                // 'Light',
+                'Dark',
+            ].map((variant) => (
+                <Card
+                    bg={variant.toLowerCase()}
+                    key={variant}
+                    text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+                    style={{ width: '18rem' }}
+                    className="mb-2"
+                >
+                    <Card.Img style={{ width: '288px', height: '160px' }} variant="top" src={courses.img} />
+                    <Card.Body>
+                        <Card.Title>{variant} {courses.name}</Card.Title>
+                        <Card.Text>
+                            {courses.paragraph}
+                        </Card.Text>
+                        <Link to='/access'> <Button variant="outline-dark">Access Course</Button></Link>
+                    </Card.Body>
+                </Card>
+            ))}
+        </>
     );
 };
 
