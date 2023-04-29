@@ -1,7 +1,9 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import useTitle from '../../Hooks/useTitle';
 
 const FQA = () => {
+    useTitle('FQA');
     return (
         <div className='mt-3'>
            <h1 className='text-center mb-3'> Frequently Ask Question</h1>

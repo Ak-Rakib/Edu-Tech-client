@@ -6,11 +6,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthProvider } from '../Contexts/ContextProvider';
+import useTitle from '../Hooks/useTitle';
 
 const Register = () => {
     const {logInWithGoogle, signUp, userUpdateProfile} = useContext(AuthProvider);
     const [error, setError] = useState('')
     const Provider = new GoogleAuthProvider()
+    useTitle('Register');
 
     const googleHandler = ()=> {
           logInWithGoogle(Provider)
@@ -49,11 +51,12 @@ const Register = () => {
             displayName : name,
             photoURL : photoURL
           }
-
           userUpdateProfile(profile)
           .then(()=> {})
           .catch(error => console.log(error));
     }
+
+    
     return (
         <div className='mt-3'>
              <Form onSubmit={signUpHandler}>
